@@ -12,8 +12,16 @@
   color: #000000;
 }
 
-.header__menu li a {
+.menu_link {
   text-decoration: none;
+}
+
+.menu-link_active {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21.13px;
+  border-bottom: 1px solid #000000;
 }
 
 .header__links-list {
@@ -24,14 +32,10 @@
 
 .header__links-list-item {
   list-style: circle;
-  border-bottom: 1px solid #000000;
 }
 
 .header__links-list-item_no-bullit {
   list-style-type: none;
-}
-li::marker {
-  border: 0.5px solid #000000;
 }
 
 .header__logo {
@@ -46,11 +50,13 @@ li::marker {
 }
 
 .address {
+  display: flex;
   font-style: initial;
   justify-self: end;
   font-size: 18px;
   line-height: 24.3px;
   color: #000000;
+  list-style-type: none;
 }
 
 .header__address {
@@ -58,18 +64,18 @@ li::marker {
   width: 240px;
 }
 
-.header__address li a {
+.address-list li a {
   text-decoration: none;
   color: inherit;
   font-size: 18px;
   line-height: 24.3px;
 }
 
-.header__address a[href^="tel:"] {
+.address-list a[href^="tel:"] {
   border-bottom: 1px solid #000000;
 }
 
-.header__address a[href^="mailto:"] {
+.address-list a[href^="mailto:"] {
   border-bottom: 1px solid #000000;
 }
 
@@ -80,7 +86,7 @@ li::marker {
   padding: 165px 50px 50px 50px;
   background-position: center;
   background-size: cover;
-  height: 757px;
+  min-height: 757px;
 }
 
 .overlay {
@@ -138,7 +144,7 @@ li::marker {
 
 .bet-button {
   all: initial;
-  border: 1px solid #ffffff;
+  border: 1px solid currentColor;
   background-color: transparent;
   width: 256px;
   height: 51px;
@@ -165,6 +171,7 @@ li::marker {
 
 .lots__card-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 25px;
 }
 
@@ -172,49 +179,51 @@ li::marker {
   width: 334px;
   height: 596px;
   margin: 27px 0px 30px 0px;
+  list-style-type: none;
 }
 
 .card-link {
   height: 100%;
+  text-decoration: none;
 }
 
 .card_type_film {
   position: relative;
   z-index: 3;
-  background-image: url(../images/card-lot-01.jpg);
-  height: 100%;
   background-position: center;
   background-size: cover;
+  background-image: url(../images/card-lot-01.jpg);
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 48px 40px;
-  gap: 274px;
 }
 
 .card_type_book {
   position: relative;
   z-index: 3;
-  display: flex;
-  flex-direction: column;
-  background-image: url(../images/card-lot-02.jpg);
-  height: 100%;
   background-position: center;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url(../images/card-lot-02.jpg);
+  height: 100%;
   padding: 48px 40px;
-  gap: 30px;
 }
 
 .card_type_picture {
   position: relative;
   z-index: 3;
-  background-image: url(../images/card-lot-03.jpg);
-  height: 100%;
   background-position: center;
   background-size: cover;
+  background-image: url(../images/card-lot-03.jpg);
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 48px 40px;
-  gap: 126px;
 }
 
 .card__title {
@@ -230,6 +239,7 @@ li::marker {
   font-size: 20px;
   line-height: 24px;
   color: #ffffff;
+  justify-self: end;
 }
 
 .lots__look-more-link {
@@ -245,7 +255,6 @@ li::marker {
 .about {
   display: grid;
   grid-template-columns: 1fr auto;
-  height: 595px;
   margin: 120px 24px;
   gap: 72px;
 }
@@ -287,52 +296,25 @@ li::marker {
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
-  /*padding: 0px 5px 0px 0px;*/
 }
 
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: start;
-  width: 1100px;
-  height: 180px;
   padding: 1px 50px 82px 50px;
   background-color: #fff;
-  margin-top: 180px;
-}
-
-.footer_address {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  font-style: initial;
-  justify-self: start;
-  font-size: 18px;
-  line-height: 24.3px;
-  color: #000000;
+  margin-top: 184px;
 }
 
 .footer_address-list {
+  justify-content: space-between;
+  justify-self: start;
+  align-items: flex-end;
   list-style-type: none;
   position: relative;
-  width: 240px;
   bottom: 0;
   border-bottom: 3px;
-}
-
-.footer_address-list li a {
-  text-decoration: none;
-  color: inherit;
-  font-size: 18px;
-  line-height: 24.3px;
-}
-
-.footer_address-list a[href^="tel:"] {
-  border-bottom: 1px solid #000000;
-}
-
-.footer_address-list a[href^="mailto:"] {
-  border-bottom: 1px solid #000000;
 }
 
 .footer__menu {
@@ -350,18 +332,6 @@ li::marker {
   font-weight: 400;
   font-size: 18px;
   line-height: 21.13px;
-}
-
-.footer__menu-link {
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21.13px;
-  border-bottom: 1px solid #000000;
-}
-
-.footer__menu-link_active {
-  text-decoration: none;
 }
 
 .footer__social-list {
